@@ -32,12 +32,20 @@ public abstract class Product {
         return this.price * this.quantity;
     }
 
-    public int sumQuantity(int quantity) {
+    public int sumQuantitySold(int quantity) {
         if(this.quantitySold == null) {
             this.quantitySold = 0;
         }
-        setQuantity(this.quantitySold += quantity);
+        quantitySold += this.quantitySold + quantity;
+        this.setQuantity(quantitySold);
 
+        return this.quantitySold;
+    }
+
+    public int getQuantitySold() {
+        if(this.quantitySold == null) {
+            this.quantitySold = 0;
+        }
         return this.quantitySold;
     }
 }

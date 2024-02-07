@@ -15,8 +15,9 @@ public class Bread extends Product {
 
         BreadBakery(product);
 
-        sumQuantity(quantity);
-        System.out.println("Quantidade de pães: " + product.getQuantitySold());
+        setQuantitySold(sumQuantitySold(quantity));
+
+        System.out.println("Quantidade total de pães: " + getQuantitySold());
     }
 
     public void BreadBakery(Product product) {
