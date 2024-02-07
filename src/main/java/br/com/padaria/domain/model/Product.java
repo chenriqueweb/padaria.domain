@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+// Exemplo de classe abstrata onde seus metodos não precisa ser implementados nas classes filhas
 public abstract class Product {
 
     private Long id;
@@ -12,19 +13,31 @@ public abstract class Product {
     private String description;
     private Double price;
     private Integer quantity;
+    private Integer quantitySold;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, Integer quantity) {
+    public Product(Long id, String name, String description, Double price, Integer quantity, Integer quantitySold) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
+        this.quantitySold = quantitySold;
     }
 
+    // POCO - Classe não amenica com metodos proprios
     public double CalculaTotal(double price, int quantity) {
         return this.price * this.quantity;
+    }
+
+    public int sumQuantity(int quantity) {
+        if(this.quantitySold == null) {
+            this.quantitySold = 0;
+        }
+        setQuantity(this.quantitySold += quantity);
+
+        return this.quantitySold;
     }
 }

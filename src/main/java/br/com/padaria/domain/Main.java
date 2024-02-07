@@ -24,13 +24,21 @@ public class Main {
 		new Drink(drink);
 
 
-		// Test Bread
+		// Test Bread - 1
 		Bread bread = new Bread();
 
 		bread.setName("Pão");
 		bread.setDescription("Pão francês");
 		bread.setPrice(0.50);
 		bread.setQuantity(100);
+
+		new Bread(bread);
+
+		// Test Bread - 2
+		bread.setName("Pão");
+		bread.setDescription("Pão doce");
+		bread.setPrice(2.50);
+		bread.setQuantity(12);
 
 		new Bread(bread);
 

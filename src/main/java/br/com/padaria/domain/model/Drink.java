@@ -1,5 +1,6 @@
 package br.com.padaria.domain.model;
 
+// Exemplo de classe concreta que herda de uma classe abstrata
 public class Drink extends Product {
 
     private double price;

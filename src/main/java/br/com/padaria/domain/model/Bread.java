@@ -1,7 +1,6 @@
 package br.com.padaria.domain.model;
 
-import br.com.padaria.domain.model.abstracts.interfaces.IProduct;
-
+// Exemplo de classe concreta que herda de uma classe abstrata
 public class Bread extends Product {
 
     private double price;
@@ -15,6 +14,9 @@ public class Bread extends Product {
         this.quantity = product.getQuantity();
 
         BreadBakery(product);
+
+        sumQuantity(quantity);
+        System.out.println("Quantidade de pães: " + product.getQuantitySold());
     }
 
     public void BreadBakery(Product product) {
