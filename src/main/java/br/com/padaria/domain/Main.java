@@ -4,6 +4,7 @@ import br.com.padaria.domain.model.Bread;
 import br.com.padaria.domain.model.Dairy;
 import br.com.padaria.domain.model.Drink;
 import br.com.padaria.domain.model.Product;
+import br.com.padaria.domain.model.abstracts.interfaces.IProduct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,33 +13,36 @@ public class Main {
 
 	public static void main(String[] args) {
 
-        // Test Product
-		Product product = new Product();
-
 		// Test Drink
-		product.setName("Leite");
-		product.setDescription("Leite de vaca");
-		product.setPrice(6.50);
-		product.setQuantity(10);
+		Drink drink = new Drink();
 
-		Drink drink = new Drink(product);
+		drink.setName("Leite");
+		drink.setDescription("Leite de vaca");
+		drink.setPrice(6.50);
+		drink.setQuantity(10);
+
+		new Drink(drink);
 
 
 		// Test Bread
-		product.setName("Pão");
-		product.setDescription("Pão francês");
-		product.setPrice(0.50);
-		product.setQuantity(100);
+		Bread bread = new Bread();
 
-		Bread bread = new Bread(product);
+		bread.setName("Pão");
+		bread.setDescription("Pão francês");
+		bread.setPrice(0.50);
+		bread.setQuantity(100);
+
+		new Bread(bread);
 
 
 		// Test Dairy
-		product.setName("Queijo");
-		product.setDescription("Queijo Minas");
-		product.setPrice(10.00);
-		product.setQuantity(5);
+		Dairy dairy = new Dairy();
 
-		Dairy dairy = new Dairy(product);
+		dairy.setName("Queijo");
+		dairy.setDescription("Queijo Minas");
+		dairy.setPrice(10.00);
+		dairy.setQuantity(5);
+
+		new Dairy(dairy);
 	}
 }

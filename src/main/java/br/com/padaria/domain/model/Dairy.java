@@ -1,12 +1,13 @@
 package br.com.padaria.domain.model;
 
-import br.com.padaria.domain.model.abstracts.interfaces.IProduct;
-
-public class Dairy implements IProduct {
+public class Dairy extends Product {
 
     private double price;
-    private double quantity;
+    private int quantity;
     private String description;
+
+    public Dairy() {
+    }
 
     public Dairy(Product product) {
         this.price = product.getPrice();
@@ -17,7 +18,7 @@ public class Dairy implements IProduct {
     }
 
     public void DairyBakery(Product product) {
-        double priceQuantity = CalculaTotal(product.getPrice(), product.getQuantity());
+        double priceQuantity = CalculaTotal(price, quantity);
 
         System.out.println("Dairy: " + getName(product) + " Valor: " + priceQuantity);
     }
@@ -28,23 +29,7 @@ public class Dairy implements IProduct {
         return price * quantity * 0.3;
     }
 
-    @Override
-    public Long getId() {
-        return this.getId();
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
     public String getName(Product product) {
         return product.getName() + "---" + this.description;
-    }
-
-    @Override
-    public String getDescription() {
-        return null;
     }
 }
