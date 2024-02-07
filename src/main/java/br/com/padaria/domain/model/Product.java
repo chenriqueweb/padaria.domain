@@ -1,5 +1,10 @@
 package br.com.padaria.domain.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Product {
 
     private Long id;
@@ -17,5 +22,9 @@ public class Product {
         this.description = description;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public double CalculaTotal(double price, int quantity) {
+        return this.price * this.quantity;
     }
 }
