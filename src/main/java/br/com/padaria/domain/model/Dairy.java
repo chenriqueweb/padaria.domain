@@ -1,6 +1,7 @@
 package br.com.padaria.domain.model;
 
 // Exemplo de classe concreta que herda de uma classe abstrata
+// Polimorfismo - A classe concreta implementa os metodos abstratos da classe abstrata
 public class Dairy extends Product {
 
     private double price;
