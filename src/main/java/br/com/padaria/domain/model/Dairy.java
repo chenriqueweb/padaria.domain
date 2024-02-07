@@ -19,7 +19,7 @@ public class Dairy implements IProduct {
     public void DairyBakery(Product product) {
         double priceQuantity = CalculaTotal(product.getPrice(), product.getQuantity());
 
-        System.out.println("Dairy: " + getName() + " Valor: " + priceQuantity);
+        System.out.println("Dairy: " + getName(product) + " Valor: " + priceQuantity);
     }
 
 
@@ -35,7 +35,12 @@ public class Dairy implements IProduct {
 
     @Override
     public String getName() {
-        return this.getDescription();
+        return null;
+    }
+
+    @Override
+    public String getName(Product product) {
+        return product.getName() + "---" + this.description;
     }
 
     @Override

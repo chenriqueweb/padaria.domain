@@ -26,6 +26,11 @@ public class Bread implements IProduct {
     }
 
     @Override
+    public String getName(Product product) {
+        return null;
+    }
+
+    @Override
     public Long getId() {
         return this.getId();
     }
