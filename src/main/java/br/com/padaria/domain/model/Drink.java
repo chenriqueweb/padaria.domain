@@ -21,6 +21,11 @@ public class Drink implements IProduct {
     }
 
     @Override
+    public double CalculaTotal(double price, int quantity) {
+        return this.price * this.quantity * 0.4;
+    }
+
+    @Override
     public Long getId() {
         return this.getId();
     }
@@ -31,7 +36,7 @@ public class Drink implements IProduct {
     }
 
     @Override
-    public double CalculaTotal(double price, int quantity) {
-        return this.price * this.quantity * 0.4;
+    public String getDescription() {
+        return this.getDescription();
     }
 }

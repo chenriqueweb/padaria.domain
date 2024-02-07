@@ -6,10 +6,12 @@ public class Dairy implements IProduct {
 
     private double price;
     private double quantity;
+    private String description;
 
     public Dairy(Product product) {
         this.price = product.getPrice();
         this.quantity = product.getQuantity();
+        this.description = product.getDescription();
 
         DairyBakery(product);
     }
@@ -17,7 +19,13 @@ public class Dairy implements IProduct {
     public void DairyBakery(Product product) {
         double priceQuantity = CalculaTotal(product.getPrice(), product.getQuantity());
 
-        System.out.println("Dairy: " + product.getName() + " Valor: " + priceQuantity);
+        System.out.println("Dairy: " + getName() + " Valor: " + priceQuantity);
+    }
+
+
+    @Override
+    public double CalculaTotal(double price, int quantity) {
+        return price * quantity * 0.3;
     }
 
     @Override
@@ -27,11 +35,11 @@ public class Dairy implements IProduct {
 
     @Override
     public String getName() {
-        return this.getName();
+        return this.getDescription();
     }
 
     @Override
-    public double CalculaTotal(double price, int quantity) {
-        return price * quantity * 0.3;
+    public String getDescription() {
+        return null;
     }
 }

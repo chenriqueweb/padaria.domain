@@ -21,6 +21,11 @@ public class Bread implements IProduct {
     }
 
     @Override
+    public double CalculaTotal(double price, int quantity) {
+        return this.price * this.quantity * 0.5;
+    }
+
+    @Override
     public Long getId() {
         return this.getId();
     }
@@ -31,7 +36,7 @@ public class Bread implements IProduct {
     }
 
     @Override
-    public double CalculaTotal(double price, int quantity) {
-        return this.price * this.quantity * 0.5;
+    public String getDescription() {
+        return null;
     }
 }
